@@ -1,13 +1,36 @@
-### 核心控制系統 (Control System)
-* **Mainboard:** bigtreetech manta e3ez
-* **EMI Filter:** AC 110V/220V 
-* **Drivers:** TMC2209 驅動器 (開啟 StallGuard 堵轉偵測作為硬體安全防護)
+本專案核心採用 **BTT Manta E3EZ + CB1** 方案，透過一體化整合減少訊號損耗，並針對 CNC 高負載需求進行電氣優化。
 
-### 運動傳動與加固 (Motion & Reinforcement)
-* **X/Y Axis:** 由原本的橡膠皮帶更換為 **GT2 鋼絲皮帶**，減少切削時的反向間隙。
-* **Z Axis:** 定製 5mm 鋁合金主軸支架，取代原本的塑料擠出機掛架。
-* **Endstops:** 全機更換為 **Shielded Optical Endstops**，避免馬達高頻訊號誤觸。
+### 1. 核心控制模組 (Integrated Control Hub)
+*   **主控板 (MCU):** **BigTreeTech Manta E3EZ**
+    *   採用與 Ender 3 相同孔位，方便快速替換原 3D 列印機主板。
+    *   內建 5 組 EZ 驅動接口，具備優異的散熱與過流保護。
+*   **核心運算模組 (SoC):** **BTT CB1 (Allwinner H616)**
+    *   運行 **Klipper** 環境，處理複雜的運動學運算。
+    *   **BTB (Board-to-Board) 連接：** 捨棄傳統 USB 線路，大幅降低傳訊干擾與震動導致的斷連風險。
+*   **韌體配置:** Klipper (Running on Linux Armbian).
 
-### 電氣佈線與防護 (Electrical & EMI)
-* **Cable Chain:** 導入三軸拖鏈，採「動力」與「訊號」分離走線軌道。
-* **Shielding:** 主軸動力線採用雙層屏蔽線，並於控制盒端實施 **Star Grounding (星型接地)**。
+### 2. 動力驅動與運動控制 (Motion & Drivers)
+*   **步進驅動器:** 採用 **EZ2209** 模組。
+    *   **StallGuard (堵轉偵測):** 設置硬體安全限位，當刀具阻力異常或撞機時自動停機。
+    *   **散熱優化:** 配合 E3EZ 的大型散熱片與主動式風扇，應對 CNC 長時間的高扭力加工。
+*   **傳動升級:**使用T8螺桿
+    *   **雙X軸:**使用限位器
+    *   **Z\Y軸:**Sensorless Homing (無限位器歸零)
+
+### 3. CNC 專用電氣防護 (CNC Specific EMI/Safety)
+*   **EMI 電源濾波:** 在 AC 110V/220V 輸入端加裝工業級 **EMI 濾波器**，隔絕主軸變頻器對 Manta E3EZ 的高頻雜訊干擾。
+*   **訊號屏蔽:** 
+    *   全機步進馬達與主軸線採用 **金屬屏蔽線 (Shielded Cable)**。
+    *   屏蔽層採取 **Star Grounding (星型接地)** 策略，統一匯流至電源地端，避免接地迴路。
+
+### 4. 主軸系統整合 (Spindle Integration)
+*   **控制模式:** 透過 Manta E3EZ 的 **PWM 接口** 或 **Onboard Relay** 控制主軸啟停與轉速。
+*   **物理隔離:** 主軸專屬電源供應器與控制電路採物理分開擺放，距離保持 15cm 以上，防止磁場感應。
+
+---
+
+### 💡 GitHub 排版小撇步：
+*   **圖片建議：** 在 GitHub 上建議附上一張 Manta E3EZ 安裝 CB1 後的特寫照，並標註主要的接線位置（例如：Spindle PWM、E-Stop）。
+*   **表格化：** 如果你的零件很多，可以用 Markdown 表格來呈現 BOM (Bill of Materials) 清單。
+
+這份內容直接貼進你的 GitHub README 的 `Hardware` 或 `Physical Setup` 章節會非常有專業感！
