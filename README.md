@@ -1,5 +1,3 @@
-以下是嚴格依照您提供的硬體資訊，並針對未提供細節的部分留出 `[請填寫...]` 佔位符的 GitHub README 排版：
-
 ### 1. 核心控制系統 (Control System)
 * **主控板 (MCU)：** BigTreeTech Manta E3EZ。
 * **核心運算 (SoC)：** BTT CB1。
