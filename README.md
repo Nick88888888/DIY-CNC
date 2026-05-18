@@ -2,7 +2,7 @@
 * **主控板 (MCU)：** BigTreeTech Manta E3EZ。
 * **核心運算 (SoC)：** BTT CB1。
 * **韌體環境：** Klipper。
-* **冷卻與散熱：** [請填寫散熱配置，例如：加裝主動式風扇直吹主板]。
+* **冷卻與散熱：** 風散對著鑽頭吹。
 
 ### 2. 運動與傳動架構 (Motion & Transmission)
 * **軸向配置：** 雙 X 軸 (Dual X-Axis)、單 Y 軸 (Single Y-Axis)、單 Z 軸 (Single Z-Axis)。
