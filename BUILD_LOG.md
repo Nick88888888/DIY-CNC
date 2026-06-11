@@ -15,16 +15,26 @@
 - T8 螺桿 + 光軸線性滑軌安裝
 - 銅螺母座定位
 
-| | |
-|---|---|
-| ![](images/phase1_01_frame_front.jpg) | ![](images/phase1_02_leadscrew_side.jpg) |
-| 機架正面 | 螺桿側視 |
-| ![](images/phase1_03_frame_angle.jpg) | ![](images/phase1_04_frame_wheels.jpg) |
-| 機架斜角 | 機架含輪子 |
-| ![](images/phase1_05_frame_rear.jpg) | ![](images/phase1_06_leadscrew_nut.jpg) |
-| 機架後方 | 螺桿銅螺母 |
-| ![](images/phase1_07_leadscrew_coupler.jpg) | |
-| 螺桿聯軸器 | |
+**機架正面**  
+![機架正面](images/phase1_01_frame_front.jpg)
+
+**機架斜角**  
+![機架斜角](images/phase1_03_frame_angle.jpg)
+
+**機架含輪子**  
+![機架含輪子](images/phase1_04_frame_wheels.jpg)
+
+**機架後方**  
+![機架後方](images/phase1_05_frame_rear.jpg)
+
+**螺桿側視**  
+![螺桿側視](images/phase1_02_leadscrew_side.jpg)
+
+**螺桿銅螺母**  
+![螺桿銅螺母](images/phase1_06_leadscrew_nut.jpg)
+
+**螺桿聯軸器**  
+![螺桿聯軸器](images/phase1_07_leadscrew_coupler.jpg)
 
 ---
 
@@ -39,16 +49,29 @@
 - 主軸座（3D 列印件）安裝
 - 鋁擠型強化側柱鎖固
 
-| | |
-|---|---|
-| ![](images/phase2_01_assembly.jpg) | ![](images/phase2_02_z_axis_mount.jpg) |
-| 組裝中 | Z 軸座安裝 |
-| ![](images/phase2_03_spindle_bracket.jpg) | ![](images/phase2_04_frame_topdown.jpg) |
-| 主軸支架特寫 | 框架俯視 |
-| ![](images/phase2_05_x_rails.jpg) | ![](images/phase2_06_printed_carriage.jpg) |
-| X 軸導軌 | 3D 列印滑車 |
-| ![](images/phase2_07_y_axis.jpg) | ![](images/phase2_08_z_install.jpg) |
-| Y 軸 | Z 軸安裝過程 |
+**組裝中**  
+![組裝中](images/phase2_01_assembly.jpg)
+
+**Z 軸座安裝**  
+![Z軸座安裝](images/phase2_02_z_axis_mount.jpg)
+
+**主軸支架特寫**  
+![主軸支架特寫](images/phase2_03_spindle_bracket.jpg)
+
+**框架俯視**  
+![框架俯視](images/phase2_04_frame_topdown.jpg)
+
+**X 軸導軌**  
+![X軸導軌](images/phase2_05_x_rails.jpg)
+
+**3D 列印滑車**  
+![3D列印滑車](images/phase2_06_printed_carriage.jpg)
+
+**Y 軸**  
+![Y軸](images/phase2_07_y_axis.jpg)
+
+**Z 軸安裝過程**  
+![Z軸安裝過程](images/phase2_08_z_install.jpg)
 
 ---
 
@@ -63,7 +86,6 @@
 - 步進馬達驅動器插裝
 - 主電源開關 + 緊急停止接線
 
-**規格：**
 | 元件 | 型號 |
 |------|------|
 | 主控板 | BTT Manta E3EZ |
@@ -71,12 +93,17 @@
 | 電源 | Mean Well NES-350-24 |
 | 驅動器 | （補充型號） |
 
-| | |
-|---|---|
-| ![](images/phase3_01_electronics_tray.jpg) | ![](images/phase3_02_board_closeup.jpg) |
-| 電控底板 | 主機板特寫 |
-| ![](images/phase3_03_manta_e3ez.jpg) | ![](images/phase3_04_electronics_panel.jpg) |
-| BTT Manta E3EZ | 電控面板整體 |
+**電控底板**  
+![電控底板](images/phase3_01_electronics_tray.jpg)
+
+**主機板特寫**  
+![主機板特寫](images/phase3_02_board_closeup.jpg)
+
+**BTT Manta E3EZ**  
+![BTT Manta E3EZ](images/phase3_03_manta_e3ez.jpg)
+
+**電控面板整體**  
+![電控面板整體](images/phase3_04_electronics_panel.jpg)
 
 ---
 
@@ -91,24 +118,53 @@
 - 走線整理與固定
 - DC 主軸馬達安裝（ZK-BM1 驅動）
 
-| | |
-|---|---|
-| ![](images/phase4_01_machine_electronics.jpg) | ![](images/phase4_02_side_wiring.jpg) |
-| 電控上機 | 側面走線 |
-| ![](images/phase4_03_spindle_motor.jpg) | ![](images/phase4_04_frame_early.jpg) |
-| 主軸馬達 | 機架早期狀態 |
-| ![](images/phase4_05_frame_concrete.jpg) | ![](images/phase4_06_machine_bedroom.jpg) |
-| 框架（地面） | 夜間施工 |
-| ![](images/phase4_07_machine_upright.jpg) | ![](images/phase4_08_coupling_closeup.jpg) |
-| 整機直立 | 聯軸器特寫 |
-| ![](images/phase4_09_bearing_block.jpg) | ![](images/phase4_10_dc_spindle.jpg) |
-| 軸承座 | DC 主軸 |
-| ![](images/phase4_11_four_steppers.jpg) | ![](images/phase4_12_tft_screen.jpg) |
-| 四軸步進 | TFT 螢幕安裝 |
-| ![](images/phase4_13_machine_wood_bed.jpg) | ![](images/phase4_14_acrylic_panels.jpg) |
-| 木質加工床 | 壓克力側板 |
-| ![](images/phase4_15_front_view.jpg) | ![](images/phase4_16_angle_view.jpg) |
-| 正面 | 斜角 |
+**電控上機**  
+![電控上機](images/phase4_01_machine_electronics.jpg)
+
+**側面走線**  
+![側面走線](images/phase4_02_side_wiring.jpg)
+
+**主軸馬達**  
+![主軸馬達](images/phase4_03_spindle_motor.jpg)
+
+**機架早期狀態**  
+![機架早期狀態](images/phase4_04_frame_early.jpg)
+
+**框架（地面施工）**  
+![框架地面施工](images/phase4_05_frame_concrete.jpg)
+
+**夜間施工**  
+![夜間施工](images/phase4_06_machine_bedroom.jpg)
+
+**整機直立**  
+![整機直立](images/phase4_07_machine_upright.jpg)
+
+**聯軸器特寫**  
+![聯軸器特寫](images/phase4_08_coupling_closeup.jpg)
+
+**軸承座**  
+![軸承座](images/phase4_09_bearing_block.jpg)
+
+**DC 主軸**  
+![DC主軸](images/phase4_10_dc_spindle.jpg)
+
+**四軸步進馬達**  
+![四軸步進馬達](images/phase4_11_four_steppers.jpg)
+
+**TFT 螢幕安裝**  
+![TFT螢幕安裝](images/phase4_12_tft_screen.jpg)
+
+**木質加工床**  
+![木質加工床](images/phase4_13_machine_wood_bed.jpg)
+
+**壓克力側板**  
+![壓克力側板](images/phase4_14_acrylic_panels.jpg)
+
+**整機正面**  
+![整機正面](images/phase4_15_front_view.jpg)
+
+**整機斜角**  
+![整機斜角](images/phase4_16_angle_view.jpg)
 
 ---
 
@@ -122,7 +178,6 @@
 - 歸零測試通過
 - 首次切削：木板輪廓切割 + 笑臉雕刻
 
-**切削參數（首次測試）：**
 | 參數 | 數值 |
 |------|------|
 | 材料 | 薄木板 |
@@ -130,24 +185,50 @@
 | 進給速度 | （補充） |
 | 切削深度 | （補充） |
 
-| | |
-|---|---|
-| ![](images/phase5_01_cutting_in_progress.jpg) | ![](images/phase5_02_gantry_front.jpg) |
-| 切削中 | 龍門架正面 |
-| ![](images/phase5_03_machine_panels.jpg) | ![](images/phase5_04_x_axis_top.jpg) |
-| 整機含護板 | X 軸俯視 |
-| ![](images/phase5_05_lab_view.jpg) | ![](images/phase5_06_first_cut1.jpg) |
-| 實驗室中運作 | 首切成果 1 |
-| ![](images/phase5_07_first_cut2.jpg) | ![](images/phase5_08_first_cut3.jpg) |
-| 首切成果 2 | 首切成果 3 |
-| ![](images/phase5_09_machine_side.jpg) | ![](images/phase5_10_machine_front_clean.jpg) |
-| 整機側面 | 整機正面（乾淨） |
-| ![](images/phase5_11_gantry_above.jpg) | ![](images/phase5_12_machine_front2.jpg) |
-| 龍門架俯視 | 整機正面 2 |
-| ![](images/phase5_13_machine_bottom.jpg) | ![](images/phase5_14_first_cut4.jpg) |
-| 底部視角 | 首切成果 4 |
-| ![](images/phase5_15_first_cut5.jpg) | ![](images/phase5_16_first_cut6.jpg) |
-| 首切成果 5 | 首切成果 6 |
+**切削中**  
+![切削中](images/phase5_01_cutting_in_progress.jpg)
+
+**龍門架正面**  
+![龍門架正面](images/phase5_02_gantry_front.jpg)
+
+**整機含護板**  
+![整機含護板](images/phase5_03_machine_panels.jpg)
+
+**X 軸俯視**  
+![X軸俯視](images/phase5_04_x_axis_top.jpg)
+
+**實驗室中運作**  
+![實驗室中運作](images/phase5_05_lab_view.jpg)
+
+**整機側面**  
+![整機側面](images/phase5_09_machine_side.jpg)
+
+**整機正面（完成）**  
+![整機正面完成](images/phase5_10_machine_front_clean.jpg)
+
+**龍門架俯視**  
+![龍門架俯視](images/phase5_11_gantry_above.jpg)
+
+**底部視角**  
+![底部視角](images/phase5_13_machine_bottom.jpg)
+
+**首切成果 1**  
+![首切成果1](images/phase5_06_first_cut1.jpg)
+
+**首切成果 2**  
+![首切成果2](images/phase5_07_first_cut2.jpg)
+
+**首切成果 3**  
+![首切成果3](images/phase5_08_first_cut3.jpg)
+
+**首切成果 4**  
+![首切成果4](images/phase5_14_first_cut4.jpg)
+
+**首切成果 5**  
+![首切成果5](images/phase5_15_first_cut5.jpg)
+
+**首切成果 6**  
+![首切成果6](images/phase5_16_first_cut6.jpg)
 
 ---
 
