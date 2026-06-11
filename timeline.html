@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DIY CNC 建構時間軸</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1117; color: #e6edf3; padding: 40px 20px; }
+  h1 { text-align: center; font-size: 1.8rem; margin-bottom: 8px; color: #f0f6fc; }
+  .subtitle { text-align: center; color: #8b949e; font-size: 0.9rem; margin-bottom: 60px; }
+  .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 160px;
+    top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #238636, #1f6feb, #9e6a03, #da3633, #8957e5);
+  }
+  .event {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .date-col {
+    width: 145px;
+    flex-shrink: 0;
+    text-align: right;
+    padding-right: 20px;
+    padding-top: 6px;
+  }
+  .date { font-size: 0.78rem; color: #8b949e; font-variant-numeric: tabular-nums; }
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 8px;
+    margin-left: -5px;
+    margin-right: 20px;
+    border: 2px solid #0d1117;
+  }
+  .card {
+    flex: 1;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 12px 16px;
+  }
+  .card:hover { border-color: #58a6ff; transition: border-color 0.2s; }
+  .phase-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+  }
+  .event-title { font-size: 0.95rem; font-weight: 600; color: #f0f6fc; }
+  .event-detail { font-size: 0.82rem; color: #8b949e; margin-top: 4px; }
+  .photos-count {
+    display: inline-block;
+    font-size: 0.72rem;
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 2px 8px;
+    margin-top: 6px;
+    color: #8b949e;
+  }
+
+  /* Phase colors */
+  .p1 .dot { background: #238636; }
+  .p1 .phase-label { color: #3fb950; }
+  .p2 .dot { background: #1f6feb; }
+  .p2 .phase-label { color: #58a6ff; }
+  .p3 .dot { background: #9e6a03; }
+  .p3 .phase-label { color: #d29922; }
+  .p4 .dot { background: #da3633; }
+  .p4 .phase-label { color: #f85149; }
+  .p5 .dot { background: #8957e5; }
+  .p5 .phase-label { color: #bc8cff; }
+
+  /* Big milestone */
+  .milestone .dot {
+    width: 16px;
+    height: 16px;
+    margin-left: -7px;
+    margin-top: 6px;
+  }
+  .milestone .card {
+    border-width: 2px;
+  }
+  .p1.milestone .card { border-color: #238636; }
+  .p2.milestone .card { border-color: #1f6feb; }
+  .p3.milestone .card { border-color: #9e6a03; }
+  .p4.milestone .card { border-color: #da3633; }
+  .p5.milestone .card { border-color: #8957e5; }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 48px;
+  }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+  .duration {
+    text-align: center;
+    color: #8b949e;
+    font-size: 0.85rem;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #21262d;
+  }
+</style>
+</head>
+<body>
+
+<h1>DIY CNC 建構時間軸</h1>
+<p class="subtitle">2025年3月 — 2026年6月 ・ 歷時約 15 個月</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#238636"></div>Phase 1 機架組裝</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#1f6feb"></div>Phase 2 運動系統</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#9e6a03"></div>Phase 3 電控系統</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#da3633"></div>Phase 4 整機整合</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#8957e5"></div>Phase 5 首次試切</div>
+</div>
+
+<div class="timeline">
+
+  <!-- Phase 1 -->
+  <div class="event p1 milestone">
+    <div class="date-col"><span class="date">2025-03-22</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 1 開始</div>
+      <div class="event-title">機架組裝啟動</div>
+      <div class="event-detail">黑色鋼板框架組立，開始整體結構搭建</div>
+      <span class="photos-count">📷 4 張</span>
+    </div>
+  </div>
+
+  <div class="event p1">
+    <div class="date-col"><span class="date">2025-05-10</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 1</div>
+      <div class="event-title">T8 螺桿 & 線性滑軌安裝</div>
+      <div class="event-detail">螺桿側組、銅螺母座、聯軸器定位</div>
+      <span class="photos-count">📷 3 張</span>
+    </div>
+  </div>
+
+  <!-- Phase 2 -->
+  <div class="event p2 milestone">
+    <div class="date-col"><span class="date">2025-07-12</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 2 開始</div>
+      <div class="event-title">運動系統安裝</div>
+      <div class="event-detail">Z 軸座安裝、主軸支架、整體框架調整</div>
+      <span class="photos-count">📷 5 張</span>
+    </div>
+  </div>
+
+  <div class="event p2">
+    <div class="date-col"><span class="date">2025-07-29</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 2</div>
+      <div class="event-title">X / Y 軸導軌 & 3D 列印滑車</div>
+      <div class="event-detail">X 軸導軌安裝、3D 列印滑車、Y 軸完成</div>
+      <span class="photos-count">📷 3 張</span>
+    </div>
+  </div>
+
+  <!-- Phase 3 -->
+  <div class="event p3 milestone">
+    <div class="date-col"><span class="date">2025-08-23</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 3 開始</div>
+      <div class="event-title">電控系統佈線</div>
+      <div class="event-detail">BTT Manta E3EZ 上板，NES-350-24 電源接線，主軸馬達初配</div>
+      <span class="photos-count">📷 4 張</span>
+    </div>
+  </div>
+
+  <div class="event p3">
+    <div class="date-col"><span class="date">2025-09-06</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 3</div>
+      <div class="event-title">主機板細部確認</div>
+      <div class="event-detail">CB1 (H616) 搭載、驅動器插裝、電容補強</div>
+      <span class="photos-count">📷 2 張</span>
+    </div>
+  </div>
+
+  <!-- Phase 4 -->
+  <div class="event p4 milestone">
+    <div class="date-col"><span class="date">2025-09-13</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 4 開始</div>
+      <div class="event-title">整機整合</div>
+      <div class="event-detail">電控底板上機，走線整理</div>
+      <span class="photos-count">📷 1 張</span>
+    </div>
+  </div>
+
+  <div class="event p4">
+    <div class="date-col"><span class="date">2025-09-25</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 4</div>
+      <div class="event-title">夜間施工</div>
+      <div class="event-detail">在宿舍/房間持續組裝調整</div>
+      <span class="photos-count">📷 1 張</span>
+    </div>
+  </div>
+
+  <div class="event p4">
+    <div class="date-col"><span class="date">2025-11-08</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 4</div>
+      <div class="event-title">聯軸器 & 四軸步進馬達</div>
+      <div class="event-detail">聯軸器特寫確認、四軸步進全數安裝</div>
+      <span class="photos-count">📷 2 張</span>
+    </div>
+  </div>
+
+  <div class="event p4">
+    <div class="date-col"><span class="date">2025-11-13</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 4</div>
+      <div class="event-title">軸承座安裝</div>
+      <div class="event-detail">各軸軸承座定位鎖固</div>
+      <span class="photos-count">📷 1 張</span>
+    </div>
+  </div>
+
+  <!-- Phase 5 begins -->
+  <div class="event p5 milestone">
+    <div class="date-col"><span class="date">2026-01-03</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 5 開始</div>
+      <div class="event-title">首次試切測試</div>
+      <div class="event-detail">木質加工床就位，Klipper 設定完成，首次試切</div>
+      <span class="photos-count">📷 2 張</span>
+    </div>
+  </div>
+
+  <div class="event p4">
+    <div class="date-col"><span class="date">2026-01-24</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 4</div>
+      <div class="event-title">DC 主軸 & TFT 螢幕安裝</div>
+      <div class="event-detail">ZK-BM1 主軸馬達定位，BTT TFT35 螢幕裝配</div>
+      <span class="photos-count">📷 4 張</span>
+    </div>
+  </div>
+
+  <div class="event p4">
+    <div class="date-col"><span class="date">2026-01-29</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 4</div>
+      <div class="event-title">壓克力護板安裝</div>
+      <div class="event-detail">四面壓克力側板封裝完成</div>
+      <span class="photos-count">📷 1 張</span>
+    </div>
+  </div>
+
+  <div class="event p5">
+    <div class="date-col"><span class="date">2026-02-28</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 5</div>
+      <div class="event-title">第一次成功切割</div>
+      <div class="event-detail">壓克力護板完成後首次正式切削，木板輪廓切割成功</div>
+      <span class="photos-count">📷 4 張</span>
+    </div>
+  </div>
+
+  <div class="event p5">
+    <div class="date-col"><span class="date">2026-04-18</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 5</div>
+      <div class="event-title">持續切削測試</div>
+      <div class="event-detail">多次切削測試，含輪廓切割與笑臉雕刻</div>
+      <span class="photos-count">📷 5 張</span>
+    </div>
+  </div>
+
+  <div class="event p5">
+    <div class="date-col"><span class="date">2026-05-16</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">Phase 5</div>
+      <div class="event-title">切削成果記錄</div>
+      <div class="event-detail">成果照記錄，從不同角度拍攝切削件</div>
+      <span class="photos-count">📷 3 張</span>
+    </div>
+  </div>
+
+  <div class="event p5 milestone">
+    <div class="date-col"><span class="date">2026-06-11</span></div>
+    <div class="dot"></div>
+    <div class="card">
+      <div class="phase-label">最新紀錄</div>
+      <div class="event-title">整機完整記錄</div>
+      <div class="event-detail">機台各視角完整拍攝，專案紀錄建立完成</div>
+      <span class="photos-count">📷 4 張</span>
+    </div>
+  </div>
+
+</div>
+
+<div class="duration">
+  🔧 總建構時間：2025年3月22日 → 2026年6月11日 ・ <strong>約 447 天</strong>
+</div>
+
+</body>
+</html>
